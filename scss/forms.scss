@@ -1,0 +1,287 @@
+@use "default";
+
+form
+{
+    margin: 1rem 0;
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    .input
+    {
+        margin: 2%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        
+        
+        input[type=text], input[type=password], input[type=email]
+        {
+            width: 95%;
+            font-size: 1.2rem;
+            display: block;
+            min-height: 3vw;
+            margin-bottom: 2rem;
+            border: 2px solid green;
+            border-radius: 0.5rem;
+            padding: 0.2rem;
+            
+
+            &:focus{
+                box-shadow: 0 0 0 0 transparent;
+                border: 2px solid blue;
+                outline: solid 1px blue;
+                outline-offset: -2px;
+            }
+
+            
+        }
+        textarea{
+            width: 95%;
+            font-size: 1.2rem;
+            display: block;
+            min-height: 20vh;
+            margin-bottom: .5rem;
+            border: 2px solid green;
+            border-radius: 0.5rem;
+            padding: 0.2rem;
+            
+
+            &:focus{
+                box-shadow: 0 0 0 0 transparent;
+                border: 2px solid blue;
+                outline: solid 1px blue;
+                outline-offset: -2px;
+            }
+
+
+        }
+
+        
+
+        label{
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            top: -2rem;
+            margin-right: 3rem;
+        }
+    }
+    .input-one-line
+    {
+        width: 100%;
+        margin: 0;
+        padding:0;
+        position: relative;
+
+        .field-icon{
+            display: block;
+            margin-right: .5rem;
+            position: absolute;
+            top: 10%;
+            right: -3%;
+            font-size: 1.5rem;
+        }
+
+        @media (min-width: 1000px){
+            .field-icon{
+                position: absolute;
+                right: 3% !important;
+                font-size: 2rem;
+                top: 8%;
+            }
+        }
+
+        input[type=text], input[type=password], input[type=email] 
+        {
+            width: 90%;
+            background: transparent;
+            border: 0;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            padding: .5rem;
+            min-height: 3vw;
+            border-bottom: solid 1px grey;
+
+            &:focus{
+                outline: 0;
+
+            }
+        }
+
+        textarea
+        {
+            width: 90%;
+            background: transparent;
+            border: 0;
+            margin-bottom: .5rem;
+            font-size: 1rem;
+            padding: .5rem;
+            min-height: 3vw;
+            border-bottom: solid 1px grey;
+
+            &:focus{
+                outline: 0;
+
+            }
+        }
+        
+
+        label{
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: .5rem 0;
+            font-size: 1.2rem;
+            pointer-events: none;
+            transition: all .5s ease;
+        }
+
+        input:focus ~ label, textarea:focus ~ label{
+            top: -.8rem;
+            left: 0;
+            font-size: .8rem;
+            color: blue;
+        }
+
+
+    }
+
+    .input-button
+    {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 1rem;
+
+        // RADIO BUTTONS STYLES
+        input[type=radio]
+        {
+            margin: 0;
+            cursor: pointer;
+            display: none;
+            
+
+    
+
+            &:checked ~ .radio::before{
+                opacity: 1;
+            }
+        }
+        
+
+        .radio{
+            font-size: 1.2rem;
+            margin: .5rem;
+            margin-left: 2rem;
+            display: inline-block;
+            cursor: pointer;
+
+            
+
+            &::after
+            {
+                content: " ";
+                display: block;
+                width: 22px;
+                margin: 1rem;
+                height: 22px;
+                border: 2px solid green;
+                border-radius: 50%;
+                position: absolute;
+                top: -1.2rem;
+                left: -3rem;
+            }
+            &::before
+            {
+                content: " ";
+                display: block;
+                width: 18px;
+                opacity: 0;
+                transition: opacity .4s;
+                height: 18px;
+                background: green;
+                border-radius: 50%;
+                position: absolute;
+                left: -1.75rem;
+                top: .04rem;
+            }
+           
+        }
+
+        // CHECKBOX STYLES
+        input[type=checkbox]
+        {
+            margin: 0;
+            cursor: pointer;
+            display: none;
+    
+
+            &:checked ~ .checkbox
+            {
+                &::after{
+                    background: transparent;
+                border: 0;
+                }
+            }
+
+            &:checked ~ .checkbox svg{
+                    opacity: 1;
+                    z-index: 3;
+                    position: relative;
+            }
+        }
+        .checkbox{
+            font-size: 1.2rem;
+            margin: .5rem;
+            margin-left: 2rem;
+            display: inline-block;
+            cursor: pointer;
+
+            
+
+            &::after
+            {
+                content: " ";
+                display: block;
+                width: 22px;
+                margin: 1rem;
+                height: 18px;
+                border: 2px solid green;
+                position: absolute;
+                top: -.5rem;
+                left: -3rem;
+            }
+            
+            svg{
+                position: relative;
+                left: -110%;
+                top: .4rem;
+                transition: opacity .4s;
+                opacity: 0;
+            }
+           
+        }
+    }
+}
+
+@media screen and (max-width: 411px){
+    .input-button .radio::before{
+        position: absolute;
+        left: -1.75rem !important;
+    }
+}
+
+@media screen and (max-width: 1034px) and (min-width: 411px){
+    .input-button .radio::before{
+        position: absolute;
+        left: -1.75rem !important;
+        top: .04rem !important;
+    }
+}

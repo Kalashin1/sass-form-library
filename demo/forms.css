@@ -1,0 +1,236 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Geometr212 BkCn BT", consolas;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+}
+
+.row
+	{
+		width: 60vw;
+		padding-top: 4rem;
+	}
+
+form {
+  margin: 1rem 0;
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+form .input {
+  margin: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+form .input input[type=text], form .input input[type=password], form .input input[type=email] {
+  width: 95%;
+  font-size: 1.2rem;
+  display: block;
+  min-height: 3vw;
+  margin-bottom: 2rem;
+  border: 2px solid green;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+}
+form .input input[type=text]:focus, form .input input[type=password]:focus, form .input input[type=email]:focus {
+  box-shadow: 0 0 0 0 transparent;
+  border: 2px solid blue;
+  outline: solid 1px blue;
+  outline-offset: -2px;
+}
+form .input textarea {
+  width: 95%;
+  font-size: 1.2rem;
+  display: block;
+  min-height: 20vh;
+  margin-bottom: 0.5rem;
+  border: 2px solid green;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+}
+form .input textarea:focus {
+  box-shadow: 0 0 0 0 transparent;
+  border: 2px solid blue;
+  outline: solid 1px blue;
+  outline-offset: -2px;
+}
+form .input label {
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  top: -2rem;
+  margin-right: 3rem;
+}
+form .input-one-line {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+form .input-one-line .field-icon {
+  display: block;
+  margin-right: 0.5rem;
+  position: absolute;
+  top: 10%;
+  right: -3%;
+  font-size: 1.5rem;
+}
+@media (min-width: 1000px) {
+  form .input-one-line .field-icon {
+    position: absolute;
+    right: 3% !important;
+    font-size: 2rem;
+    top: 8%;
+  }
+}
+form .input-one-line input[type=text], form .input-one-line input[type=password], form .input-one-line input[type=email] {
+  width: 90%;
+  background: transparent;
+  border: 0;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  min-height: 3vw;
+  border-bottom: solid 1px grey;
+}
+form .input-one-line input[type=text]:focus, form .input-one-line input[type=password]:focus, form .input-one-line input[type=email]:focus {
+  outline: 0;
+}
+form .input-one-line textarea {
+  width: 90%;
+  background: transparent;
+  border: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  min-height: 3vw;
+  border-bottom: solid 1px grey;
+}
+form .input-one-line textarea:focus {
+  outline: 0;
+}
+form .input-one-line label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+form .input-one-line input:focus ~ label, form .input-one-line textarea:focus ~ label {
+  top: -0.8rem;
+  left: 0;
+  font-size: 0.8rem;
+  color: blue;
+}
+form .input-button {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 1rem;
+}
+form .input-button input[type=radio] {
+  margin: 0;
+  cursor: pointer;
+  display: none;
+}
+form .input-button input[type=radio]:checked ~ .radio::before {
+  opacity: 1;
+}
+form .input-button .radio {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+  margin-left: 2rem;
+  display: inline-block;
+  cursor: pointer;
+}
+form .input-button .radio::after {
+  content: " ";
+  display: block;
+  width: 24px;
+  margin: 1rem;
+  height: 24px;
+  border: 2px solid green;
+  border-radius: 50%;
+  position: absolute;
+  top: -1.2rem;
+  left: -3rem;
+}
+form .input-button .radio::before {
+  content: " ";
+  display: block;
+  width: 16px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  height: 18px;
+  background: green;
+  border-radius: 50%;
+  position: absolute;
+  left: -1.75rem;
+  top: -0.01rem;
+}
+form .input-button input[type=checkbox] {
+  margin: 0;
+  cursor: pointer;
+  display: none;
+}
+form .input-button input[type=checkbox]:checked ~ .checkbox::after {
+  background: transparent;
+  border: 0;
+}
+form .input-button input[type=checkbox]:checked ~ .checkbox svg {
+  opacity: 1;
+  z-index: 3;
+  position: relative;
+}
+form .input-button .checkbox {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+  margin-left: 2rem;
+  display: inline-block;
+  cursor: pointer;
+}
+form .input-button .checkbox::after {
+  content: " ";
+  display: block;
+  width: 22px;
+  margin: 1rem;
+  height: 18px;
+  border: 2px solid green;
+  position: absolute;
+  top: -0.5rem;
+  left: -3rem;
+}
+form .input-button .checkbox svg {
+  position: relative;
+  left: -110%;
+  top: 0.4rem;
+  transition: opacity 0.4s;
+  opacity: 0;
+}
+
+@media screen and (max-width: 411px) {
+  .input-button .radio::before {
+    position: absolute;
+    left: -1.75rem !important;
+  }
+}
+@media screen and (max-width: 1034px) and (min-width: 411px) {
+  .input-button .radio::before {
+    position: absolute;
+    left: -1.75rem !important;
+    top: -0.01rem !important;
+  }
+}
